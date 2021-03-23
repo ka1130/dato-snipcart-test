@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 import CartContext from '../context/CartContext';
 // import { formatPrice } from '../utils/formatPrice';
 // import { updateProductQty } from '../utils/cart';
@@ -22,7 +22,7 @@ const ProductTemplate = ({ data: { datoCmsProduct }, pageContext: { id } }) => {
       </button>
       <h6>$ {price}</h6>
       <GatsbyImage image={getImage(image)} alt={name} src={src} />
-      {/* <ReactMarkdown>{description}</ReactMarkdown>  */}
+      <ReactMarkdown>{description}</ReactMarkdown>
     </div>
   );
 };
@@ -33,6 +33,7 @@ export const query = graphql`
       name
       slug
       price
+      description
       image {
         gatsbyImageData(width: 600, placeholder: BLURRED)
       }
