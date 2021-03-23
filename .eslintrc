@@ -1,0 +1,22 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "arrow-body-style": 0,
+    "react/prop-types": 0,
+    "camelcase": 0,
+    "import/newline-after-import": 0,
+    "react/button-has-type": 0,
+    "semi": [2, "always"],
+    "jsx-a11y/label-has-associated-control": 0,
+    "no-lonely-if": 0,
+    "react/jsx-props-no-spreading": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "semi": true
+      }
+    ]
+  }
+}

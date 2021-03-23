@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Nastasia Jewels`,
+    description: `Snipcart test`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -32,5 +34,23 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATO_API_TOKEN,
+        // The project environment to read from. Defaults to the primary environment:
+        environment: `main`,
+        previewMode: false,
+        disableLiveReload: false,
+      },
+    },
   ],
-}
+};
