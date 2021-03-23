@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-// import { formatPrice } from '../utils/formatPrice';
 
 const StyledProducts = styled.ul`
   display: grid;
@@ -35,47 +34,47 @@ const StyledProducts = styled.ul`
 `;
 
 const IndexPage = ({ data }) => {
-  // const {
-  //   allStrapiProduct: { nodes: products },
-  // } = data;
+  const {
+    allDatoCmsProduct: { nodes: products },
+  } = data;
   return (
     <>
       <SEO title="Home" />
       <StyledProducts>
-        {/* {products.map(({ thumbnail, name, id, price_in_cent, slug }) => (
-          <div className="product-single" key={id}>
-            <Link to={`/products/${slug}`}>
-              <h3>
-                {name}
-                <span className="price">$ {formatPrice(price_in_cent)}</span>
-              </h3>
-              <GatsbyImage image={getImage(thumbnail)} alt={name} />
-            </Link>
-          </div>
-        ))} */}
+        {products.map(({ image, name, originalId, price, slug }) => {
+          const src = getImage(image).images.sources[0].srcSet;
+          return (
+            <div className="product-single" key={originalId}>
+              <Link to={`/products/${slug}`}>
+                <h3>
+                  {name}
+                  <span className="price"> ${price}</span>
+                </h3>
+                <GatsbyImage image={getImage(image)} alt={name} src={src} />
+              </Link>
+            </div>
+          );
+        })}
       </StyledProducts>
     </>
   );
 };
 
-// export const query = graphql`
-//   {
-//     allStrapiProduct {
-//       nodes {
-//         id
-//         name
-//         description
-//         price_in_cent
-//         slug
-//         strapiId
-//         thumbnail {
-//           childImageSharp {
-//             gatsbyImageData(width: 200, placeholder: BLURRED)
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  {
+    allDatoCmsProduct {
+      nodes {
+        name
+        originalId
+        price
+        description
+        slug
+        image {
+          gatsbyImageData(width: 600, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
