@@ -13,8 +13,8 @@ const StyledHeader = styled.header`
 
   .wrapper {
     margin: 0 auto;
-    max-width: 960px;
-    padding: 1rem;
+    max-width: 640px;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
 
