@@ -61,5 +61,11 @@ module.exports = {
         autopop: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'pl',
+      },
+    },
   ],
 };
