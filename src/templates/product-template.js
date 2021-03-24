@@ -19,7 +19,7 @@ const ProductTemplate = ({ data: { datoCmsProduct } }) => {
       >
         Do koszyka
       </button>
-      <h6>$ {price}</h6>
+      <h6>PLN {price}</h6>
       <GatsbyImage image={getImage(image)} alt={name} src={src} />
       <ReactMarkdown>{description}</ReactMarkdown>
     </div>

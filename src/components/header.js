@@ -61,9 +61,7 @@ const StyledHeader = styled.header`
 
 const Header = ({ siteTitle }) => {
   const { state } = useContext(SnipcartContext);
-  const { userStatus, cartQuantity } = state;
-  console.log('userStatus', userStatus);
-  console.log('cartQuantity', cartQuantity);
+  const { userStatus } = state;
   return (
     <StyledHeader>
       <div className="wrapper">
