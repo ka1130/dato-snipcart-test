@@ -17,7 +17,7 @@ const ProductTemplate = ({ data: { datoCmsProduct } }) => {
         data-item-image={src}
         data-item-name={name}
       >
-        Add to cart
+        Do koszyka
       </button>
       <h6>$ {price}</h6>
       <GatsbyImage image={getImage(image)} alt={name} src={src} />

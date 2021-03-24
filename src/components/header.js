@@ -71,7 +71,7 @@ const Header = ({ siteTitle }) => {
           <span className="qty snipcart-total-price" />
         </span>
         <button className="user-icon snipcart-customer-signin">
-          My account
+          Moje konto
         </button>
       </div>
     </StyledHeader>
