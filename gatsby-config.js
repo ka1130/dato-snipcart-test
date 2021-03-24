@@ -54,11 +54,21 @@ module.exports = {
         disableLiveReload: false,
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-snipcartv3',
+    //   options: {
+    //     apiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY,
+    //     autopop: true,
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-snipcartv3',
+      resolve: `gatsby-plugin-snipcart-advanced`,
       options: {
-        apiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY,
-        autopop: true,
+        version: '3.0.29',
+        publicApiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY, // use public api key here or in environment variable
+        defaultLang: 'pl',
+        currency: 'pln',
+        useSideCart: true,
       },
     },
     {

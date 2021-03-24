@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { SnipcartContext } from 'gatsby-plugin-snipcart-advanced/context';
 import styled from 'styled-components';
 import CartIcon from '../images/cart.svg';
 
@@ -59,6 +60,10 @@ const StyledHeader = styled.header`
 `;
 
 const Header = ({ siteTitle }) => {
+  const { state } = useContext(SnipcartContext);
+  const { userStatus, cartQuantity } = state;
+  console.log('userStatus', userStatus);
+  console.log('cartQuantity', cartQuantity);
   return (
     <StyledHeader>
       <div className="wrapper">
@@ -71,7 +76,7 @@ const Header = ({ siteTitle }) => {
           <span className="qty snipcart-total-price" />
         </span>
         <button className="user-icon snipcart-customer-signin">
-          Moje konto
+          {userStatus === 'SignedOut' ? 'Zaloguj się' : 'Moje konto'}
         </button>
       </div>
     </StyledHeader>
