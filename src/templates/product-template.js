@@ -17,7 +17,7 @@ const ProductTemplate = ({ data: { datoCmsProduct }, pageContext: { id } }) => {
         className="snipcart-add-item"
         data-item-id={originalId}
         data-item-price={price}
-        data-item-url={`http://localhost:8000/products/${slug}`}
+        data-item-url={`/products/${slug}`}
         data-item-description={description}
         data-item-image={src}
         data-item-name={name}
