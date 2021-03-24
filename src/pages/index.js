@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
               <Link to={`/products/${slug}`}>
                 <h3>
                   {name}
-                  <span className="price"> PLN {price}</span>
+                  <span className="price"> {price} zł</span>
                 </h3>
                 <GatsbyImage image={getImage(image)} alt={name} src={src} />
               </Link>
