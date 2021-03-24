@@ -27,9 +27,10 @@ const StyledProducts = styled.ul`
   }
   .price {
     font-weight: normal;
-    font-size: 0.8rem;
+    font-variant: normal;
+    font-size: 0.7rem;
     display: block;
-    margin: 0.2rem 0 0.8rem 0;
+    margin: 0.5rem 0 0.8rem 0;
   }
 `;
 
@@ -48,7 +49,7 @@ const IndexPage = ({ data }) => {
               <Link to={`/products/${slug}`}>
                 <h3>
                   {name}
-                  <span className="price"> ${price}</span>
+                  <span className="price"> PLN {price}</span>
                 </h3>
                 <GatsbyImage image={getImage(image)} alt={name} src={src} />
               </Link>

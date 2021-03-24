@@ -69,6 +69,7 @@ module.exports = {
         defaultLang: 'pl',
         currency: 'pln',
         useSideCart: true,
+        // templatesUrl:
       },
     },
     {
