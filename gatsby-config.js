@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.DATO_API_TOKEN,
+        apiToken: process.env.GATSBY_DATO_API_TOKEN,
         // The project environment to read from. Defaults to the primary environment:
         environment: `main`,
         previewMode: false,
@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-snipcartv3',
       options: {
-        apiKey: process.env.SNIPCART_TEST_API_KEY,
+        apiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY,
       },
     },
   ],
