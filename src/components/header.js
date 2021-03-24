@@ -24,18 +24,30 @@ const StyledHeader = styled.header`
       line-height: 1.5rem;
     }
 
-    a {
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-    }
-
     .cart-icon {
+      margin-left: auto;
+      margin-right: 1rem;
+
       svg {
         width: 1.25rem;
         height: auto;
         fill: #fff;
       }
+    }
+
+    .user-icon {
+      font-size: 0.8rem;
+    }
+
+    .cart-icon,
+    .user-icon,
+    a {
+      color: #fff;
+      display: flex;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
     }
 
     .qty {
@@ -53,11 +65,14 @@ const Header = ({ siteTitle }) => {
         <h1>
           <Link to="/">{siteTitle}</Link>
         </h1>
-        <Link to="/cart" className="cart-icon snipcart-checkout">
+        <span className="cart-icon snipcart-checkout">
           <span className="qty snipcart-items-count" />
           <CartIcon />
           <span className="qty snipcart-total-price" />
-        </Link>
+        </span>
+        <button className="user-icon snipcart-customer-signin">
+          My account
+        </button>
       </div>
     </StyledHeader>
   );
