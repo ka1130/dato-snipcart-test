@@ -67,7 +67,6 @@ export const query = graphql`
         name
         originalId
         price
-        description
         slug
         image {
           gatsbyImageData(width: 600, placeholder: BLURRED)

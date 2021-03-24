@@ -52,5 +52,11 @@ module.exports = {
         disableLiveReload: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-snipcartv3',
+      options: {
+        apiKey: process.env.SNIPCART_TEST_API_KEY,
+      },
+    },
   ],
 };

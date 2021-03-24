@@ -3,11 +3,10 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'react-markdown';
 import CartContext from '../context/CartContext';
-// import { formatPrice } from '../utils/formatPrice';
 // import { updateProductQty } from '../utils/cart';
 
 const ProductTemplate = ({ data: { datoCmsProduct }, pageContext: { id } }) => {
-  const { name, price, description, image } = datoCmsProduct;
+  const { name, price, description, image, originalId, slug } = datoCmsProduct;
   // const product = { ...strapiProduct, id };
   // const [, setCart] = useContext(CartContext);
   const src = getImage(image).images.sources[0].srcSet;
@@ -15,8 +14,14 @@ const ProductTemplate = ({ data: { datoCmsProduct }, pageContext: { id } }) => {
     <div>
       <h2>{name}</h2>
       <button
-        // onClick={() => setCart(updateProductQty(product, 1))}
-        style={{ marginBottom: '1rem' }}
+        className="snipcart-add-item"
+        data-item-id={originalId}
+        data-item-price={price}
+        data-item-url={`http://localhost:8000/products/${slug}`}
+        data-item-description={description}
+        data-item-image={src}
+        data-item-name={name}
+        // style={{ marginBottom: '1rem' }}
       >
         Add to cart
       </button>
@@ -34,6 +39,7 @@ export const query = graphql`
       slug
       price
       description
+      originalId
       image {
         gatsbyImageData(width: 600, placeholder: BLURRED)
       }
