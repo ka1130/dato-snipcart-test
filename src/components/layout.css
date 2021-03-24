@@ -595,3 +595,20 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* Custom Sni[cart styles */
+
+.snipcart-payment-card-form {
+  /* border: 2px solid black;
+  padding: 3px; */
+  background: #663399;
+}
+
+.snipcart-form__field {
+  padding: 8px 0;
+  background: #663399;
+}
+
+.test-card-hint {
+  border: 1px solid lightseagreen !important;
+}

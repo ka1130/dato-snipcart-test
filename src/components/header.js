@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import CartIcon from '../images/cart.svg';
-import CartContext from '../context/CartContext';
-import { getTotalQty } from '../utils/cart';
 
 const StyledHeader = styled.header`
   background: rebeccapurple;
@@ -49,16 +47,16 @@ const StyledHeader = styled.header`
 `;
 
 const Header = ({ siteTitle }) => {
-  // const [cart] = useContext(CartContext);
   return (
     <StyledHeader>
       <div className="wrapper">
         <h1>
           <Link to="/">{siteTitle}</Link>
         </h1>
-        <Link to="/cart" className="cart-icon">
+        <Link to="/cart" className="cart-icon snipcart-checkout">
+          <span className="qty snipcart-items-count" />
           <CartIcon />
-          {/* <span className="qty">{getTotalQty(cart)}</span> */}
+          <span className="qty snipcart-total-price" />
         </Link>
       </div>
     </StyledHeader>
