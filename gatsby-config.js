@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-plugin-snipcart-advanced`,
       options: {
         version: '3.0.29',
-        publicApiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY,
+        publicApiKey: process.env.GATSBY_SNIPCART_API_KEY,
         defaultLang: `pl`,
         currency: `pln`,
         // templatesUrl: `/snipcart/index.html`,
