@@ -42,7 +42,7 @@
     "payment_amount": "Kwota do zapłaty"
   },
   "cart": {
-    "subtotal": "Suma częściowa",
+    "subtotal": "Suma",
     "shipping_taxes_calculated_at_checkout": "Koszty dostawy i podatki będą doliczone przy podsumowaniu.",
     "loading": "Tworzymy Twój koszyk...",
     "secured_by": "Zabezpieczone przez Snipcart",
@@ -192,7 +192,7 @@
     "taxes": "Podatek",
     "taxes_included_in_price": "Niektóre produkty zawierają podatek.",
     "total": "Razem",
-    "subtotal": "Częściowo",
+    "subtotal": "Suma",
     "shipping": "Dostawa",
     "discount": "Zniżki",
     "quantity": "x"

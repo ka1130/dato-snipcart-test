@@ -48,7 +48,6 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.GATSBY_DATO_API_TOKEN,
-        // The project environment to read from. Defaults to the primary environment:
         environment: `main`,
         previewMode: false,
         disableLiveReload: false,
@@ -65,11 +64,10 @@ module.exports = {
       resolve: `gatsby-plugin-snipcart-advanced`,
       options: {
         version: '3.0.29',
-        publicApiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY, // use public api key here or in environment variable
-        defaultLang: 'pl',
-        currency: 'pln',
-        useSideCart: true,
-        // templatesUrl:
+        publicApiKey: process.env.GATSBY_SNIPCART_TEST_API_KEY,
+        defaultLang: `pl`,
+        currency: `pln`,
+        // templatesUrl: `/snipcart/index.html`,
       },
     },
     {
